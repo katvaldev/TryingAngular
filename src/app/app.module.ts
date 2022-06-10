@@ -11,9 +11,12 @@ import { ShowAbuelitoComponent } from './components/show-abuelito/show-abuelito.
 import { ListAbuelitosComponent } from './components/list-abuelitos/list-abuelitos.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, AddAbuelitoComponent, EditAbuelitoComponent, AbuelitoManagerComponent, ShowAbuelitoComponent, ListAbuelitosComponent, PageNotFoundComponent, HomeComponent],
+  declarations: [AppComponent, NavbarComponent, AddAbuelitoComponent, EditAbuelitoComponent, AbuelitoManagerComponent, ShowAbuelitoComponent, ListAbuelitosComponent, PageNotFoundComponent, HomeComponent, FooterComponent, NosotrosComponent, ContactoComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,39 @@
+.imgBackground {
+  position: relative;
+  z-index: -1;
+  top: -8em;
+  right: -2em;
+  width: 57em;
+}
+
+.col-4 {
+  margin-left: 12em;
+  margin-top: 17em;
+  height: 20em;
+}
+h1 {
+  font-size: 3em;
+  background-image: url("../../../assets/img/adorno.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  line-height: 55px;
+}
+p {
+  margin-top: 2em;
+}
+button {
+  margin-top: 2em;
+  font-size: 1em;
+  color: white;
+  padding: 13px 40px;
+  background-color: rgb(243, 112, 64);
+  border: none;
+}
+button:hover {
+  background: rgb(255, 86, 74);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 86, 74, 1) 0%,
+    rgba(245, 186, 3, 1) 100%
+  );
+}

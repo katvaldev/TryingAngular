@@ -2,9 +2,11 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AbuelitoManagerComponent } from "./components/abuelito-manager/abuelito-manager.component";
 import { AddAbuelitoComponent } from "./components/add-abuelito/add-abuelito.component";
+import { ContactoComponent } from "./components/contacto/contacto.component";
 import { EditAbuelitoComponent } from "./components/edit-abuelito/edit-abuelito.component";
 import { HomeComponent } from "./components/home/home.component";
 import { ListAbuelitosComponent } from "./components/list-abuelitos/list-abuelitos.component";
+import { NosotrosComponent } from "./components/nosotros/nosotros.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { ShowAbuelitoComponent } from "./components/show-abuelito/show-abuelito.component";
 
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: "abuelito/add", component: AddAbuelitoComponent },
   { path: "abuelito/:abueId", component: ShowAbuelitoComponent },
   { path: "abuelito/edit/:abueId", component: EditAbuelitoComponent },
+  { path: "nosotros", component: NosotrosComponent },
+  { path: "contacto", component: ContactoComponent },
   { path: "**", component: PageNotFoundComponent },
 ];
 
