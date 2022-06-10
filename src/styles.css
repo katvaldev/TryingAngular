@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.btn-dark:hover {
+  background-color: rgb(94, 93, 93);
+  border-style: none;
+}
+.btn-secondary {
+  background-color: rgb(163, 163, 163);
+  border-color: rgb(163, 163, 163);
+}
+.btn-secondary:hover {
+  background-color: rgb(94, 93, 93);
+  border-style: none;
+}

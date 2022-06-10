@@ -1,18 +1,20 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FacebookModule } from "ngx-facebook";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddAbuelitoComponent } from './components/add-abuelito/add-abuelito.component';
+import { EditAbuelitoComponent } from './components/edit-abuelito/edit-abuelito.component';
+import { AbuelitoManagerComponent } from './components/abuelito-manager/abuelito-manager.component';
+import { ShowAbuelitoComponent } from './components/show-abuelito/show-abuelito.component';
+import { ListAbuelitosComponent } from './components/list-abuelitos/list-abuelitos.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    // other imports
-    FacebookModule.forRoot(),
-  ],
+  declarations: [AppComponent, NavbarComponent, AddAbuelitoComponent, EditAbuelitoComponent, AbuelitoManagerComponent, ShowAbuelitoComponent, ListAbuelitosComponent, PageNotFoundComponent, HomeComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
