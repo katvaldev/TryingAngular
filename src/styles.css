@@ -35,3 +35,18 @@ body {
     background-size: 60%;
   }
 }
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: rgb(255, 86, 74);
+  color: linear-gradient(
+    90deg,
+    rgba(255, 86, 74, 1) 0%,
+    rgba(245, 186, 3, 1) 100%
+  );
+}
