@@ -21,3 +21,17 @@ body {
   background-color: rgb(180, 180, 180);
   color: white;
 }
+
+.container h2 {
+  font-size: 2.5em;
+  background-image: url("../src/assets/img/adorno.png");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  padding-bottom: 0.5em;
+}
+
+@media screen and(max-width:480px) {
+  .container h2 {
+    background-size: 60%;
+  }
+}
