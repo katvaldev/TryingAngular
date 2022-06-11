@@ -7,22 +7,38 @@
       ></a>
     </div>
   </div>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
-    <!-- ABUELITO 1 -->
-    <div class="col mb-5">
+  <!-- <pre>{{ abuelitos | json }}</pre> -->
+  <!-- spinner -->
+  <div *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+  <!-- error -->
+  <div *ngIf="!loading && errorMessage">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="h4 text-danger fw-bold">{{ errorMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- abuelitos -->
+  <div
+    *ngIf="!loading && abuelitos.length > 0"
+    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5"
+  >
+    <div *ngFor="let abue of abuelitos" class="col mb-5">
       <div class="card shadow">
-        <img src="../images/abuelito.jpg" class="card-img-top" alt="abuelito" />
+        <img [src]="abue.foto" class="card-img-top" alt="abuelito" />
         <div class="card-body">
-          <p class="card-text">
-            <strong>Nombre: </strong>Juan Antonio Mercedes Aguilera
-          </p>
-          <p class="card-text"><strong>Edad: </strong> 78 años</p>
-          <p class="card-text"><strong>Ciudad: </strong> Lima</p>
+          <p class="card-text"><strong>Nombre: </strong>{{ abue.nombre }}</p>
+          <p class="card-text"><strong>Edad: </strong>{{ abue.edad }}</p>
+          <p class="card-text"><strong>Ciudad: </strong> {{ abue.ciudad }}</p>
           <div class="d-flex justify-content-around">
-            <a class="btn btn-primary" routerLink="/abuelito/edit/:abueId"
+            <a class="btn btn-primary" routerLink="/abuelito/edit/{{ abue.id }}"
               ><i class="fas fa-pencil"></i
             ></a>
-            <a class="btn btn-warning" routerLink="/abuelito/:abueId"
+            <a class="btn btn-warning" routerLink="/abuelito/{{ abue.id }}"
               ><i class="fas fa-eye"></i
             ></a>
             <button class="btn btn-danger">

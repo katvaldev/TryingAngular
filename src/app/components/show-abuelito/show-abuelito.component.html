@@ -1,1 +1,29 @@
-<p>show-abuelito works!</p>
+<!-- spinner -->
+<div *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>
+<!-- error -->
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="h4 text-danger fw-bold">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <pre>{{ abue | json }}</pre> -->
+<!-- detalle -->
+<div class="container mb-5">
+  <h1 class="m-4">{{ abue.nombre }}</h1>
+  <div class="row">
+    <div class="col">
+      <img [src]="abue.foto" alt="" />
+    </div>
+    <div class="col">
+      <p><strong>Edad: </strong>{{ abue.edad }}</p>
+      <p><strong>Ciudad: </strong> {{ abue.ciudad }}</p>
+      <p><strong>Historia: </strong> {{ abue.descripcion }}</p>
+    </div>
+  </div>
+</div>

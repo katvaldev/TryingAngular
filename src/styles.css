@@ -50,3 +50,7 @@ a:hover {
     rgba(245, 186, 3, 1) 100%
   );
 }
+.card img {
+  height: 20em;
+  object-fit: cover;
+}

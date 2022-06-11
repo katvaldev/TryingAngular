@@ -1,118 +1,39 @@
 <div class="container">
   <h2 class="mt-5">Ellos te necesitan</h2>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
+    <!-- spinner -->
+    <div *ngIf="loading">
+      <app-spinner></app-spinner>
+    </div>
+    <!-- error -->
+    <div *ngIf="!loading && errorMessage">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="h4 text-danger fw-bold">{{ errorMessage }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ABUELITO 1 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/abuelito.jpg" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p class="card-text">
-            <strong>Nombre: </strong>Juan Antonio Mercedes Aguilera
-          </p>
-          <p class="card-text"><strong>Edad: </strong> 78 años</p>
-          <p class="card-text"><strong>Ciudad: </strong> Lima</p>
-          <a href="#" class="card-link"><strong>Saber más ▸</strong></a>
-        </div>
-      </div>
-    </div>
-    <!-- ABUELITO 2 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/anciano2.jpg" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p><strong>Nombre: </strong>Brigit Huamán García</p>
-          <p><strong>Edad: </strong> 75 años</p>
-          <p><strong>Ciudad: </strong> Pasco</p>
-          <a class="card-link" routerLink="/abuelito/:abueId"
-            ><strong>Saber más ▸</strong></a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- ABUELITO 3 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/anciano1.jpg" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p><strong>Nombre: </strong>Liliana Quispe Fernández</p>
-          <p><strong>Edad: </strong> 80 años</p>
-          <p><strong>Ciudad: </strong> Ayacucho</p>
-          <a href="#" class="card-link"><strong>Saber más ▸</strong></a>
-        </div>
-      </div>
-    </div>
-    <!-- ABUELITO 4 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/anciano3.jpg" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p>
-            <strong>Nombre: </strong>Benjamín Hurtado Ortiz y Gaby Bendezu
-            Berrocal
-          </p>
-          <p><strong>Edad: </strong> 82 años y 75 años</p>
-          <p><strong>Ciudad: </strong> Ancash</p>
-          <a href="#"><strong>Saber más ▸</strong></a>
-        </div>
-      </div>
-    </div>
-    <!-- ABUELITO 5 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/ancianos.jpg" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p><strong>Nombre: </strong>Leidy Osorio Diaz y Felix Acuña Torres</p>
-          <p><strong>Edad: </strong> 69 años y 73 años</p>
-          <p><strong>Ciudad: </strong> Ica</p>
-          <a href="#"><strong>Saber más ▸</strong></a>
-        </div>
-      </div>
-    </div>
-    <!-- ABUELITO 6 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/anciano4.jpg" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p><strong>Nombre: </strong>Wagner Pantoja Flores</p>
-          <p><strong>Edad: </strong> 72 años</p>
-          <p><strong>Ciudad: </strong> Arequipa</p>
-          <a href="#"><strong>Saber más ▸</strong></a>
-        </div>
-      </div>
-    </div>
-    <!-- ABUELITO 7 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/abuelita.jpg" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p><strong>Nombre: </strong>Andrea Chunga Zamora</p>
-          <p><strong>Edad: </strong> 65 años</p>
-          <p><strong>Ciudad: </strong> Junín</p>
-          <a href="#"><strong>Saber más ▸</strong></a>
-        </div>
-      </div>
-    </div>
-    <!-- ABUELITO 8 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/anciano5.jpg" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p><strong>Nombre: </strong>Virginia Rivera Lizarraga</p>
-          <p><strong>Edad: </strong> 85 años</p>
-          <p><strong>Ciudad: </strong> Lima</p>
-          <a href="#"><strong>Saber más ▸</strong></a>
-        </div>
-      </div>
-    </div>
-    <!-- ABUELITO 9 -->
-    <div class="col">
-      <div class="card shadow">
-        <img src="../images/anciano6.JPG" class="card-img-top" alt="abuelito" />
-        <div class="card-body">
-          <p><strong>Nombre: </strong>Micaela Cornejo Cisneros</p>
-          <p><strong>Edad: </strong> 63 años</p>
-          <p><strong>Ciudad: </strong> Tacna</p>
-          <a href="#"><strong>Saber más ▸</strong></a>
+    <div *ngIf="!loading && abuelitos.length > 0">
+      <div class="row g-3">
+        <div *ngFor="let abue of abuelitos" class="col">
+          <div class="card shadow">
+            <img [src]="abue.foto" class="card-img-top" alt="abuelito" />
+            <div class="card-body">
+              <p class="card-text">
+                <strong>Nombre: </strong>{{ abue.nombre }}
+              </p>
+              <p class="card-text"><strong>Edad: </strong> {{ abue.edad }}</p>
+              <p class="card-text">
+                <strong>Ciudad: </strong> {{ abue.ciudad }}
+              </p>
+              <a routerLink="/abuelito/{{ abue.id }}" class="card-link"
+                ><strong>Saber más ▸</strong></a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>

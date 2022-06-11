@@ -7,6 +7,6 @@ export interface IContacto {
   password: string;
   direccion: string;
   dni: string;
-  fecha_creac: Date;
-  fecha_modif: Date;
+  fecha_creac?: Date;
+  fecha_modif?: Date;
 }
