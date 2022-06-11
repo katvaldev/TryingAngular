@@ -1,7 +1,7 @@
 export interface IAbuelito {
   id?: string;
   nombre: string;
-  edad: number;
+  fecha_nac: Date;
   foto: string;
   contacto: string;
   ciudad: string;

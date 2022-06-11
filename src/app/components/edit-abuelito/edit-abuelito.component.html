@@ -1,1 +1,63 @@
-<p>edit-abuelito works!</p>
+<div class="contenidoCenter text-center mt-5">
+  <h2 class="mt-3">¿A quién quieres ayudar?</h2>
+</div>
+<div class="text-center mb-3">
+  <form class="mx-auto row g-3 mt-4 w-75" action="">
+    <div class="input-group col-md-6">
+      <span class="input-group-text" id="addon-wrapping"
+        ><i class="fa-solid fa-person-cane"></i
+      ></span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nombres y Apellidos"
+        aria-label="Nombre"
+        aria-describedby="addon-wrapping"
+      />
+    </div>
+    <div class="input-group col-md-6">
+      <span class="input-group-text" id="addon-wrapping"
+        ><i class="fa-solid fa-birthday-cake"></i
+      ></span>
+      <input
+        type="date"
+        class="form-control"
+        placeholder="Fecha de Nacimiento"
+        aria-label="Nacimiento"
+        aria-describedby="addon-wrapping"
+      />
+    </div>
+    <div class="input-group col-md-6">
+      <input
+        type="file"
+        class="form-control"
+        placeholder="Foto"
+        aria-label="Foto"
+        aria-describedby="addon-wrapping"
+      />
+    </div>
+    <div class="col-md-6">
+      <select id="ciudad" class="form-select">
+        <option selected>Ciudad...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <input type="text" class="form-control" id="dni" placeholder="DNI" />
+    </div>
+    <div class="form-floating">
+      <textarea
+        class="form-control"
+        placeholder="Cuéntanos su historia"
+        id="floatingTextarea2"
+        style="height: 100px"
+      ></textarea>
+      <label class="text-muted" for="floatingTextarea2"
+        >Cuéntanos su historia</label
+      >
+    </div>
+    <div>
+      <button>Listo</button>
+    </div>
+  </form>
+</div>

@@ -1,1 +1,36 @@
-<p>abuelito-manager works!</p>
+<div class="container">
+  <div class="row">
+    <h2 class="mt-5 col">Administrador</h2>
+    <div class="col align-self-center d-flex flex-row-reverse mt-4">
+      <a class="btn btn-success px-3 p-2" routerLink="/abuelito/add"
+        >¡Conocí a un abuelito! <i class="fas fa-person-cane"></i
+      ></a>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
+    <!-- ABUELITO 1 -->
+    <div class="col mb-5">
+      <div class="card shadow">
+        <img src="../images/abuelito.jpg" class="card-img-top" alt="abuelito" />
+        <div class="card-body">
+          <p class="card-text">
+            <strong>Nombre: </strong>Juan Antonio Mercedes Aguilera
+          </p>
+          <p class="card-text"><strong>Edad: </strong> 78 años</p>
+          <p class="card-text"><strong>Ciudad: </strong> Lima</p>
+          <div class="d-flex justify-content-around">
+            <a class="btn btn-primary" routerLink="/abuelito/edit/:abueId"
+              ><i class="fas fa-pencil"></i
+            ></a>
+            <a class="btn btn-warning" routerLink="/abuelito/:abueId"
+              ><i class="fas fa-eye"></i
+            ></a>
+            <button class="btn btn-danger">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
